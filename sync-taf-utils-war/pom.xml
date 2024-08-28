@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ericsson.nms.cmmediation</groupId>
+		<artifactId>CMSyncNodeAtt-testware</artifactId>
+		<version>1.0.83-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>sync-taf-utils-war</artifactId>
+	<packaging>war</packaging>
+
+	<name>sync-taf-utils-war</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<archive>
+						<manifestEntries>
+							<Dependencies>com.ericsson.oss.itpf.datalayer.dps.api export all,com.ericsson.oss.itpf.datalayer.dps.delegate.api export all</Dependencies>
+						</manifestEntries>
+					</archive>
+					<warName>${project.artifactId}</warName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>		
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.nms.cmmediation</groupId>
+			<artifactId>sync-taf-utils-jar</artifactId>
+			<version>1.0.83-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson-mapper-asl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

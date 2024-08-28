@@ -1,0 +1,15 @@
+SET
+(
+  mo "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=Rivendell-Eutrancellfdd"
+  exception none
+  nrOfAttributes 1
+  
+  "eutranCellPolygon" Array Struct 2
+      nrOfElements 2
+      "cornerLatitude" Integer 64
+      "cornerLongitude" Integer 97
+
+      nrOfElements 2
+      "cornerLatitude" Integer 65
+      "cornerLongitude" Integer 98
+)

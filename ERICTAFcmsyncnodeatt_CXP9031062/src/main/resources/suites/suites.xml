@@ -1,0 +1,20 @@
+<suite name="Suite">
+
+	<test name="CM_SYNC_NODE_TEST" preserve-order="true">
+		<classes>
+			<class name="com.ericsson.oss.cm.sync.test.cases.SyncNodeAttributeVerification" />
+		<methods> 
+				<include name="addAndSyncNode" /> 
+<!-- 		<include name="verifyAllNodeAttributes" />  -->	
+			</methods> 
+
+<!-- 			<class -->
+<!-- 				name="com.ericsson.oss.cm.sync.test.cases.SyncNodeAttributeVerification" /> -->
+<!-- 			<methods> -->
+<!-- 				<include name="addAndSyncNode" /> -->
+<!-- 				<include name="verifyNodesUniqueModelAttributes" /> -->
+<!-- 			</methods>	 		 -->
+
+		</classes>
+	</test>
+</suite>

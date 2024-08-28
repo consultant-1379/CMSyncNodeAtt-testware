@@ -1,0 +1,42 @@
+<div class="tableWrap">
+
+	<div class="result-title">
+		Attributes Comparison
+	</div>
+
+	<table class="common">
+		<thead>
+			<tr>
+				<th class="heading">Name</th>
+
+				<th class="heading">DPS <span style=
+				"text-decoration: underline">Type</span></th>
+
+				<th class="heading">ModelService <span style=
+				"text-decoration: underline">Type</span></th>
+
+				<th class="heading">DPS <span style=
+				"text-decoration: underline">Value</span></th>
+
+				<th class="heading">Netsim <span style=
+				"text-decoration: underline">Value</span></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{{#attributes}}
+			<tr>
+				<td class="{{{isSuccess}}}">{{{name}}}</td>
+
+				<td class="{{{isSuccess}}}">{{dpsType}}</td>
+
+				<td class="{{{isSuccess}}}">{{modelServiceType}}</td>
+
+				<td class="{{{isSuccess}}}">{{dpsValue}}</td>
+
+				<td class="{{{isSuccess}}}">{{netsimValue}}</td>
+			</tr>
+			{{/attributes}}
+		</tbody>
+	</table>
+</div>

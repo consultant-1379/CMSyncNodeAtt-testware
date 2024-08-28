@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Each team will need to update the following section to reflect the 
+		correct parent for their test cases -->
+	<parent>
+		<groupId>com.ericsson.nms</groupId>
+		<artifactId>integration</artifactId>
+		<version>15.2.0.20</version>
+	</parent>
+    <!-- Each team will need to update the following section with the correct
+        information -->
+    <groupId>com.ericsson.nms.cmmediation</groupId>
+    <artifactId>CMSyncNodeAtt-testware</artifactId>
+    <version>1.0.83-SNAPSHOT</version>
+    <packaging>pom</packaging>
+	
+	<name>SyncNode Feature / Attribute compare Acceptance Tests</name>
+	<description>
+        Intended to test the Node Synchronization via the TOR Mediation layer.
+    </description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<target.java.version>1.7</target.java.version>
+		<!-- -->
+		<groovy.version>2.1.9</groovy.version>
+		<groovy-eclipse-compiler.version>2.8.0-01</groovy-eclipse-compiler.version>
+		<groovy-eclipse-batch.version>2.1.5-03</groovy-eclipse-batch.version>
+		<plexus-compiler-api.version>2.2</plexus-compiler-api.version>
+		
+		<version.script-engine-editor-spi>1.9.24</version.script-engine-editor-spi>
+		<guava.version>15.0</guava.version>
+		<jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
+		<mustache.version>0.8.13</mustache.version>
+		
+		<!-- TAF VERSION -->
+		<taf.version>2.4.30</taf.version>
+		
+		<!-- TAF TOR OPERATORS -->
+		<taf-operators.version>1.1.93</taf-operators.version>
+		<taf-netsim-operators.version>1.1.100</taf-netsim-operators.version>
+		
+		<data-persistence-service-bom.version>1.12.5</data-persistence-service-bom.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.ericsson.cifwk</groupId>
+				<artifactId>taf-bom</artifactId>
+				<version>${taf.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.ericsson.cifwk</groupId>
+				<artifactId>all-taf-sdk</artifactId>
+				<version>${taf.version}</version>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.ericsson.cifwk.taf</groupId>
+					<artifactId>taf-maven-plugin</artifactId>
+					<version>${taf.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>clean</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>com.ericsson.cifwk.taf</groupId>
+				<artifactId>taf-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<scm>
+		<tag>ERICtaf_util-${taf.version}</tag>
+	</scm>
+
+	<modules>
+		<module>sync-taf-utils-jar</module>
+		<module>sync-taf-utils-war</module>
+		<module>ERICTAFcmsyncnodeatt_CXP9031062</module>
+		<module>test-pom</module>
+	</modules>
+</project>

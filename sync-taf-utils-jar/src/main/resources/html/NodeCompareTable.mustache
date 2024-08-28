@@ -1,0 +1,29 @@
+<div class="tableWrap">
+	<div class="result-title">Attributes Comparison</div>
+	<table class="common tg">
+		<tdead>
+			<tr>
+				<td class="heading">FDN</td>
+				<td class="heading">Model Atrs</td>
+				<td class="heading">MO Atrs</td>
+				<td class="heading">Netsim Atrs</td>
+				<td class="heading">Non-Sync Atrs</td>
+				<td class="heading">Result</td>
+			</tr>
+		</tdead>
+		<tbody>	
+			{{#comparisons}}
+			<tr>
+				<td class="{{isSuccess}}">
+					<a href="{{link}}">{{fdn}}</a>
+				</td>
+				<td class="{{isSuccess}}"> {{modelAttributes}} </td>
+				<td class="{{isSuccess}}"> {{dpsAttributes}} </td>
+				<td class="{{isSuccess}}"> {{netsimAttributes}} </td>
+				<td class="{{isSuccess}}"> {{pmAttributes}} </td>
+				<td class="{{isSuccess}}">{{result}}</td>
+			</tr>
+			{{/comparisons}}
+		</tbody>
+	</table>
+</div>

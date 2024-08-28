@@ -1,0 +1,18 @@
+<suite name="deltaSuite">
+
+	<test name="CM_SYNC_NODE_DELTA_SYNC_TEST" preserve-order="true"
+		parallel="false">
+		<classes>
+			<class name="com.ericsson.oss.cm.sync.test.cases.DeltaSync" />
+			<methods>
+				<include name="addAndSyncNode" />
+				<include name="verifyAllNodeAttributes" />
+				<include name="testFullSyncIsCalledOnGcDiff"/>
+				<include name="testSimpleMoCreationUpdate"/>
+				<include name="testUpdateSeqOfStructs"/>
+				<include name="testUpdateSeqMoRefs"/>
+				<include name = "cleanUpAnyRemnantsFromNode"/>
+			</methods>
+		</classes>
+	</test>
+</suite>

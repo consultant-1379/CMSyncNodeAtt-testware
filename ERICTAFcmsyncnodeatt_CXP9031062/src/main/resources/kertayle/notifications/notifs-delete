@@ -1,0 +1,16 @@
+SET
+(
+  mo "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=Rivendell-Eutrancellfdd"
+  exception none
+  nrOfAttributes 2
+  
+  "reservedBy" Array Ref 0
+  
+  "sectorFunctionRef" Ref 0
+)
+
+DELETE
+(
+    mo "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=Rivendell-Eutrancellfdd"
+    exception none
+)

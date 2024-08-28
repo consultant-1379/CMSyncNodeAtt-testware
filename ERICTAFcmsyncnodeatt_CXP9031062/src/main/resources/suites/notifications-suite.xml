@@ -1,0 +1,16 @@
+<suite name="notifications-suite">
+
+	<test name="CM_SYNC_NODE_WITH_NOTIFS_TEST" preserve-order="true">
+		<classes>
+			<class
+				name="com.ericsson.oss.cm.sync.test.cases.SyncNodeAttributeVerificationWithNotifications" />
+			<methods>
+				<include name="addAndSyncNode" />
+				<include name="triggerCreateAndUpdateNotifications" />
+				<include name="verifyAllNodeAttributesAfterUpdateNotifications" />
+			 	<include name="triggerDeleteNotification" />
+				 <include name="verifyAllNodeAttributesAfterDeleteNotification" />
+			</methods>
+		</classes>
+	</test>
+</suite>

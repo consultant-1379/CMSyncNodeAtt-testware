@@ -1,0 +1,3 @@
+simulation,nodename,nodeIp,enmVersion,createKer,updateKer,deleteKer
+LTEE1200-V2x160-RV-FDD-LTE01,RIV-LTE01ERBS00010,10.242.49.160,14B,"\kertayle\notifications\notifs-create","\kertayle\notifications\notifs-updates","\kertayle\notifications\notifs-delete"
+LTED1189-limx38-FDD-LTE07_Rivendell,RIV-LTE07ERBS00008,10.242.49.158,13B,"\kertayle\notifications\notifs-create","\kertayle\notifications\notifs-updates","\kertayle\notifications\notifs-delete"

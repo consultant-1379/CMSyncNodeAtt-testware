@@ -1,0 +1,12 @@
+<suite name="parallelSuite">
+
+	<test name="CM_SYNC_NODE_PARALLEL_TEST" preserve-order="true">
+		<classes>
+			<class name="com.ericsson.oss.cm.sync.test.cases.SyncNodeParallelTestCase" />
+			<methods>
+				<include name="SuccessfulAddingOfXNodesForSyncInParallel" />
+				<include name="SuccessfulSyncOfNodesInParallel" />
+			</methods>
+		</classes>
+	</test>
+</suite>

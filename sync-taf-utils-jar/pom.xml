@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ericsson.nms.cmmediation</groupId>
+		<artifactId>CMSyncNodeAtt-testware</artifactId>
+		<version>1.0.83-SNAPSHOT</version>
+	</parent>
+	<artifactId>sync-taf-utils-jar</artifactId>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+				<artifactId>data-persistence-service-bom</artifactId>
+				<version>${data-persistence-service-bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+			<artifactId>dps-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.modeling</groupId>
+			<artifactId>model-service-api-jar</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.modeling</groupId>
+			<artifactId>model-service-jar</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.cifwk</groupId>
+			<artifactId>taf-netsim</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.cifwk</groupId>
+			<artifactId>http-tool</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.spullara.mustache.java</groupId>
+			<artifactId>compiler</artifactId>
+			<version>${mustache.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.nms.security</groupId>
+			<artifactId>OpenIDM-impl</artifactId>
+			<version>${taf-operators.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.ericsson.nms</groupId>
+					<artifactId>EnmBase</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.nms</groupId>
+			<artifactId>EnmBase</artifactId>
+			<version>${taf-operators.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>*</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+			
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.nms</groupId>
+			<artifactId>HostConfigurator</artifactId>
+			<version>${taf-operators.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.cifwk</groupId>
+			<artifactId>taf-jboss</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jboss.netty</groupId>
+					<artifactId>netty</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson-mapper-asl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+			<classifier>cdi1.0</classifier>
+		</dependency>
+
+	</dependencies>
+</project>

@@ -1,0 +1,55 @@
+SET
+(
+  mo "ManagedElement=1,ENodeBFunction=1,EUtranCellFDD=Rivendell-Eutrancellfdd"
+  exception none
+  nrOfAttributes 8
+  
+  "userLabel" String "igor"
+  
+  "ulSrsEnable" Boolean true
+  
+  "zzzTemporary13" Integer 55555
+  
+  "pdcchCfiMode" Integer 2
+  
+  "emergencyAreaId" Array Integer 4
+	  1
+	  2
+	  3
+	  4	  
+	   
+   "additionalPlmnReservedList" Array Boolean 5
+	  true
+	  false
+	  true
+	  false  
+	  true
+	  
+   "ssacBarringForMMTELVideo" Struct 
+     nrOfElements 3
+     "acBarringFactor" Integer 97
+     "acBarringTime" Integer 65
+     "acBarringForSpecialAC" Array Boolean 5
+     true
+	 false
+	 true
+	 false
+	 true 
+	 
+   "eutranCellPolygon" Array Struct 2
+      nrOfElements 2
+      "cornerLatitude" Integer 64
+      "cornerLongitude" Integer 97
+
+      nrOfElements 2
+      "cornerLatitude" Integer 65
+      "cornerLongitude" Integer 98  
+
+	"reservedBy" Array Ref 3
+	 "ManagedElement=1,ENodeBFunction=1,SectorCarrier=1"
+     "ManagedElement=1,ENodeBFunction=1,SectorCarrier=2"
+     "ManagedElement=1,ENodeBFunction=1,SectorCarrier=3"
+   
+   "sectorFunctionRef" Ref "ManagedElement=1,SectorEquipmentFunction=1"
+ )
+

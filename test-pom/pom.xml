@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ericsson.nms.cmmediation</groupId>
+		<artifactId>CMSyncNodeAtt-testware</artifactId>
+		<version>1.0.83-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>test-pom</artifactId>
+	<packaging>pom</packaging>
+
+	<properties>
+		<taf_version>2.2.6</taf_version>
+		<taf_sdk>all</taf_sdk>
+		<taf_testware>true</taf_testware>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.ericsson.cifwk</groupId>
+				<artifactId>taf-bom</artifactId>
+				<version>${taf.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ericsson.nms.cmmediation.testware</groupId>
+			<artifactId>ERICTAFcmsyncnodeatt_CXP9031062</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+
+	<profiles>
+		<profile>
+			<id>test</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.ericsson.cifwk.taf</groupId>
+						<artifactId>taf-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>test</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>noTest</id>
+			<activation>
+				<property>
+					<name>!taf.profiles</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<tasks>
+								<skipTests>true</skipTests>
+							</tasks>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>com.soebes.maven.plugins</groupId>
+						<artifactId>maven-echo-plugin</artifactId>
+						<version>0.1</version>
+						<executions>
+							<execution>
+								<id>echo-warning</id>
+								<phase>install</phase>
+								<goals>
+									<goal>echo</goal>
+								</goals>
+								<configuration>
+									<logLevel>WARNING</logLevel>
+									<echos>
+										<echo>The taf.profiles property must be specified to run the TAF test.</echo>
+									</echos>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

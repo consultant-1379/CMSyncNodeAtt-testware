@@ -1,0 +1,20 @@
+SET
+(
+  mo "ManagedElement=1,SectorEquipmentFunction=1"
+  exception none
+  nrOfAttributes 1
+  
+  "reservedBy" Array Ref 3
+    	"ManagedElement=1,ENodeBFunction=1,SectorCarrier=1"
+    	"ManagedElement=1,ENodeBFunction=1,SectorCarrier=2"
+  		"ManagedElement=1,ENodeBFunction=1,SectorCarrier=3"
+   
+ )
+
+CREATE
+(
+    parent "ManagedElement=1,ENodeBFunction=1"
+    identity "Rivendell-Eutrancellfdd"
+    moType EUtranCellFDD
+    exception none
+)
